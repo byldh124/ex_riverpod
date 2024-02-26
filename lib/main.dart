@@ -1,9 +1,15 @@
+import 'package:ex_riverpod/riverpod/provider_observer.dart';
 import 'package:ex_riverpod/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(ProviderScope(child: const MyApp()));
+  runApp(ProviderScope(
+    observers: [
+      Logger(),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
